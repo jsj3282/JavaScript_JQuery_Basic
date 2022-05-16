@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script>
+        $(function() {
+            $(".btn2").hide();
+
+            $(".btn1").on("click", function() {
+                $(".box").slideUp(1000, "linear", 
+                function() {
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                });
+            });
+
+            $(".btn2").on("click", function() {
+                $(".box").fadeIn(1000, "swing",
+                function() {
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                });
+            });
+
+            $(".btn3").on("click", function() {
+                $(".box").slideToggle(1000, "linear");
+            });
+
+            $(".btn4").on("click", function() {
+                $(".box").fadeTo("fast", 0.3);
+            });
+
+            $(".btn5").on("click", function() {
+                $(".box").fadeTo("fast", 1);
+            });
+        });
+    </script>
+    <style>
+        .content {
+            width: 400px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button class="btn1">slideUp</button>
+        <button class="btn2">fadeIn</button>
+    </p>
+    <p>
+        <button class="btn3">toggleSlide</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit pharetra massa id lobortis. Aliquam ante diam, egestas et lectus ut, semper mattis dolor. In vel sapien gravida, congue nunc vitae, condimentum mauris. Vestibulum elementum imperdiet neque, sed ultricies lectus posuere in. Nulla dictum consectetur sapien, non rutrum augue tincidunt vulputate. Sed odio risus, aliquam id magna ut, sodales imperdiet urna. In pellentesque, neque sit amet suscipit luctus, magna ex accumsan mi, in porta magna enim non erat. Integer finibus fringilla neque. In hac habitasse platea dictumst. In at lacus ut lorem ornare pulvinar vitae ac velit. Donec vel commodo urna, sit amet dignissim velit.
+        </div>
+    </div>
+</body>
+</html>
